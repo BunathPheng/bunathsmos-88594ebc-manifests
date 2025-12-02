@@ -1,0 +1,16 @@
+---
+# Source: helm for kubernetes/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: bunathsmos-88594ebc          # Service name
+  labels:
+    app: bunathsmos-88594ebc
+spec:
+  type: ClusterIP   # Service type (ClusterIP, NodePort, LoadBalancer)
+  selector:
+    app: bunathsmos-88594ebc         # Matches Deployment labels
+  ports:
+    - protocol: TCP
+      port: 3000         # Service port
+      targetPort: 3000  # Target container port
